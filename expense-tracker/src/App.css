@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.main{
+    background-color: rgb(252, 204, 204);
+    color: rgb(10, 10, 90);
+    text-align: center;
+    /* margin: 2rem; */
+    padding: 2rem;
+}
