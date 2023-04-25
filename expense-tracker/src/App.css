@@ -4,10 +4,12 @@
     padding: 0px;
 }
 
-.main{
-    background-color: rgb(252, 204, 204);
+.app_main{
+    background-color: rgb(167, 102, 250);
+}
+
+.app_main_heading{
     color: rgb(10, 10, 90);
     text-align: center;
-    /* margin: 2rem; */
-    padding: 2rem;
+    padding: 1.5rem ;
 }

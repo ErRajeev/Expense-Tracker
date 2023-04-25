@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import './components/expenses/expense_items/ExpenseItem'
 import ExpenseList from './components/expenses/expense_list/ExpenseList';
-// import Data from './Data';
 import NewExpense from './components/new_expense/NewExpense';
 
 const Data = []
@@ -31,11 +30,13 @@ const App = () => {
 
   return (
     <>
-      <div className='main'>
-        <h1>Hello Rajeev Ranjan</h1>
+      <div className='app_main'>
+        <div className='app_main_heading'>
+          <h1>Track Your Expenses</h1>
+        </div>
+        <NewExpense onNewExpenseSave={onNewExpenseSubmit} />
+        <ExpenseList expenses={expenses} />
       </div>
-      <NewExpense onNewExpenseSave={onNewExpenseSubmit} />
-      <ExpenseList expenses={expenses} />
     </>
   )
 }
