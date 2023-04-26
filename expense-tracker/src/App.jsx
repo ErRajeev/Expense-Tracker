@@ -3,6 +3,7 @@ import './App.css'
 import './components/expenses/expense_items/ExpenseItem'
 import ExpenseList from './components/expenses/expense_list/ExpenseList';
 import NewExpense from './components/new_expense/NewExpense';
+import Footer from './components/footer/Footer';
 
 const Data = []
 
@@ -21,7 +22,7 @@ const App = () => {
   useEffect(() => {
     fetch('http://localhost:3000/expenses').then((res) => {
       res.json().then((json) => {
-        console.log(json);
+        // console.log(json);
         setExpenses(json)
       })
     })
@@ -36,6 +37,7 @@ const App = () => {
         </div>
         <NewExpense onNewExpenseSave={onNewExpenseSubmit} />
         <ExpenseList expenses={expenses} />
+        <Footer />
       </div>
     </>
   )

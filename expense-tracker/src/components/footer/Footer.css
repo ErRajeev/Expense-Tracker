@@ -1,0 +1,19 @@
+.footer {
+    color: goldenrod;
+    background-color: rgb(1, 1, 39);
+}
+
+.footer__list {
+    display: flex;
+    margin-top: 1.3rem;
+    padding: 1rem;
+}
+
+.footer__list li {
+    margin: 0.5rem 1.5rem;
+}
+
+.footer__list li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
