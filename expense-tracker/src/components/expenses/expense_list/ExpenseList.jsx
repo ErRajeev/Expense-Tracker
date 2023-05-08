@@ -5,7 +5,7 @@ import './ExpenseList.css'
 const ExpenseList = (props) => {
     const { expenses = [] } = props;
     if (expenses.length === 0) {
-        return <h3>No Expenses Found</h3>
+        return <h3 className="error__msg">No Expenses Found</h3>
     }
 
     return (

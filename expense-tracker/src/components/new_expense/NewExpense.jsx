@@ -11,7 +11,7 @@ const NewExpense = (props) => {
             ...new_expense,
             id: Math.random() * 10
         }
-        console.log('dfghj', new_expense)
+        // console.log('dfghj', new_expense)
         onNewExpenseSave(modified_expense);
     }
 

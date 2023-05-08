@@ -1,46 +1,18 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import './components/expenses/expense_items/ExpenseItem'
-import ExpenseList from './components/expenses/expense_list/ExpenseList';
-import NewExpense from './components/new_expense/NewExpense';
-import Footer from './components/footer/Footer';
-
-const Data = []
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './layer/home/Home';
+import ExpenseTrackerPage from './layer/expense_tracker_page/ExpenseTrackerPage';
 
 const App = () => {
-  const [expenses, setExpenses] = useState(Data)
-  const onNewExpenseSubmit = (new_expense) => {
-    // console.log(new_expense);
-    fetch('http://localhost:3000/expenses', {
-      method: 'POST',
-      body: JSON.stringify(new_expense)
-    }).then((res) => {
-      setExpenses((previous_expenses) => [new_expense, ...previous_expenses]);
-    })
-  }
-
-  useEffect(() => {
-    fetch('http://localhost:3000/expenses').then((res) => {
-      res.json().then((json) => {
-        // console.log(json);
-        setExpenses(json)
-      })
-    })
-  }, [])
-
-
   return (
     <>
-      <div className='app_main'>
-        <div className='app_main_heading'>
-          <h1>Track Your Expenses</h1>
-        </div>
-        <NewExpense onNewExpenseSave={onNewExpenseSubmit} />
-        <ExpenseList expenses={expenses} />
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/expense_tracker' element={<ExpenseTrackerPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
-}
+};
 
-export default App
+export default App;
