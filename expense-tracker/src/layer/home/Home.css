@@ -1,0 +1,16 @@
+.home__main{
+    height: 90vh;
+    background-color: rgb(237, 215, 215);
+
+}
+.home__img{
+    display: flex;
+}
+
+.home__img img{
+    opacity: .6;
+    width: 50%;
+    margin-top: 5%;
+    padding: 3rem;
+    transform: rotate(-15deg);
+}

@@ -8,12 +8,12 @@ const Navbar = () => {
             <div className="navbar">
                 <ul className="navbar__list">
                     <li className="navbar__list__item" >
-                        <NavLink to="/" >Home</NavLink>
+                        <NavLink to="/" className="navlink">Home</NavLink>
                     </li>
                     <li className="navbar__list__item">
-                        <NavLink to="/expense_tracker">Expense Tracker</NavLink>
+                        <NavLink to="/expense_tracker" className="navlink">Expense Tracker</NavLink>
                     </li>
-                </ul>
+                </ul>   
             </div>
         </>
     )
