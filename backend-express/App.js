@@ -1,8 +1,6 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 const App = new express();
 const cors = require('cors')
-App.use(bodyParser.json());
 App.use(cors())
 
 const expenses = [
