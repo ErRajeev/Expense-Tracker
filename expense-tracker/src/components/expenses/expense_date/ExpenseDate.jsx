@@ -3,9 +3,11 @@ import './ExpenseDate.css'
 
 const ExpenseDate = (props) => {
     const { date } = props;
-    const month = date.toLocaleString('en-US', { month: 'long' });
-    const day = date.toLocaleString('en-Us', { day: 'numeric' });
-    const year = date.getFullYear();
+
+    const dateObj = new Date(date);
+    const day = dateObj.getDate();
+    const month = dateObj.toLocaleString('default', { month: 'long' });
+    const year = dateObj.getFullYear();
 
     return (
         <>
@@ -16,5 +18,5 @@ const ExpenseDate = (props) => {
             </div>
         </>
     )
-}
+};
 export default ExpenseDate;

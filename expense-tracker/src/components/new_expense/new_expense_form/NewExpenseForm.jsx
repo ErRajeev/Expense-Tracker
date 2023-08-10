@@ -33,29 +33,24 @@ const NewExpenseForm = (props) => {
     return (
         <>
             <form onSubmit={onFormSubmitHandler}>
-                {/* {forn data fild} */}
                 <div className="new-expense__controls">
                     <div className="new-expense__control">
                         <label htmlFor="title">Title</label>
-                        <input type="text" id="expense_title" name="title" onChange={onTitleChangeHandler}
-                            value={title} />
+                        <input type="text" id="expense_title" name="title" onChange={onTitleChangeHandler} value={title} />
                     </div>
 
                     <div className="new-expense__control">
                         <label htmlFor="expense_amount">Amount</label>
-                        <input type="number" id="expense_amount" name="amount" min="0" max="10000"
-                            onChange={onAmountChangeHandler} value={amount} />
+                        <input type="number" id="expense_amount" name="amount" min="0" max="10000" onChange={onAmountChangeHandler} value={amount} />
                     </div>
 
                     <div className="new-expense__control">
                         <label htmlFor="expense_date">Date</label>
-                        <input type="date" id="expense_date" name="date" onChange={onDateChangeHandler}
-                            value={date} />
+                        <input type="date" id="expense_date" name="date" onChange={onDateChangeHandler} value={date} />
                     </div>
 
                 </div>
 
-                {/* {button} */}
                 <div className="new-expense__actions">
                     <button>Cancel</button>
                     <button>Add Expense</button>

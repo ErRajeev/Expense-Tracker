@@ -6,27 +6,33 @@ import Footer from "../../components/footer/Footer";
 import ExpenseList from "../../components/expenses/expense_list/ExpenseList";
 import NewExpense from "../../components/new_expense/NewExpense";
 
-const Data = []
-
 const ExpenseTrackerPage = () => {
-  const [expenses, setExpenses] = useState(Data)
+  const [expenses, setExpenses] = useState([])
+
   const onNewExpenseSubmit = (new_expense) => {
-    // console.log(new_expense);
-    fetch('http://localhost:3000/expenses', {
+    fetch('http://localhost:5000/expenses', {
       method: 'POST',
-      body: JSON.stringify(new_expense)
+      body: JSON.stringify(new_expense),
+      headers: {
+        "Content-Type": "application/json"
+      }
     }).then((res) => {
       setExpenses((previous_expenses) => [new_expense, ...previous_expenses]);
+      getAllExpenses()
+    })
+    console.log(new_expense);
+  }
+
+  const getAllExpenses = () => {
+    fetch('http://localhost:5000/expenses').then((res) => {
+      res.json().then((json) => {
+        setExpenses(json)
+      })
     })
   }
 
   useEffect(() => {
-    fetch('http://localhost:3000/expenses').then((res) => {
-      res.json().then((json) => {
-        // console.log(json);
-        setExpenses(json)
-      })
-    })    
+    getAllExpenses()
   }, [])
 
   return (
